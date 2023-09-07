@@ -1,74 +1,144 @@
 
-
 package com.mycompany.primer_punto_02;
 
 import java.util.Scanner;
 
 public class Primer_punto_02 {
-
-    public static int menu (){
-        Scanner a = new Scanner(System.in);
-        System.out.println("\t\tCalculadora de Matrices\n1. Matrices\n2. Operaciones\n3. Salir");
-        return a.nextInt();
-        
-    }
-    public static int menu1 (){
-        Scanner a = new Scanner(System.in);
-        System.out.println("\t\tMatrices\n1. Matrice A\n2. Matriz B\n3. Matriz C\n4. Escalar\n5. Regresar");
-        return a.nextInt();
-        
-    }
-    public static int menu2 (){
-        Scanner a = new Scanner(System.in);
-        System.out.println("\t\tOperaciones\n1. Matrices\n2. Operaciones\n3. Salir");
-        return a.nextInt();
-        
-    }
-    public static double[][] matriz(int i, int j){
-        Scanner a = new Scanner(System.in);
-        double[][] matriz = new double[i][j];
-        for(int x=0;x<i;x++){
-            for(int y=0;y<j;y++){
-                System.out.println("Posisicon a"+(x+1)+(y+1)+" : ");
-                matriz[x][y]=a.nextDouble();
-            }
-        }
-        return matriz;
-    }
     public static void main(String[] args) {
-        Scanner a = new Scanner(System.in);
-        int i, j, opc, opc1, opc2;
-        double[][] matrizA, matrizB, matrizC;
-        do{
-            opc=menu();
-            switch(opc){
-                case 1: do{
-                    opc1=menu1();
-                    switch(opc1){
-                        case 1: System.out.println("\nIngrese la cantidad de filas: ");
-                            i=a.nextInt();
-                            System.out.println("\nIngrese la cantidad de columnas: ");
-                            j=a.nextInt();
-                            matrizA=matriz(i,j);
-                            break;          
-                        case 2:System.out.println("\nIngrese la cantidad de filas: ");
-                            i=a.nextInt();
-                            System.out.println("\nIngrese la cantidad de columnas: ");
-                            j=a.nextInt();
-                            matrizB=matriz(i,j);
-                            break;
-                        case 3:System.out.println("\nIngrese la cantidad de filas: ");
-                            i=a.nextInt();
-                            System.out.println("\nIngrese la cantidad de columnas: ");
-                            j=a.nextInt();
-                            matrizC=matriz(i,j);
-                            break;
-                        case 4:                        
-                                
+       Scanner in = new Scanner(System.in);
+        Operacion op = new Operacion();
+        int tam;
+        int opcion, opcion2;
+        int fila1, fila2;
+        int col1, col2;
+        int num;
+        String mens;
+        do {
+            System.out.println("Elja Una Opcion: \n1.Suma de Matrices \n2.Prodcuto Punto \n3.Matriz por un escalar \n4.Matriz Traspuesta \n5.Salir");
+            opcion = in.nextInt();
+            switch (opcion) {
+                case 1: {
+                    mens = "ingrese el numero de filas de la matriz";
+                    Lectura.imprimir(mens);
+                    tam = Lectura.cap();
+                    int matrizA[][] = new int[tam][tam];
+                    int matrizB[][] = new int[tam][tam];
+                    int matrizC[][] = new int[tam][tam];
+                    int matrizD[][] = new int[tam][tam];
+                    mens = "Ingrese los numeros para la matriz A:";
+                    Lectura.imprimir(mens);
+                    matrizA = Lectura.matriz_cuadrada();
+                    mens = "===================================================";
+                    Lectura.imprimir(mens);
+                    mens = "Ingrese los numeros para la matriz B:";
+                    Lectura.imprimir(mens);
+                    matrizB = Lectura.matriz_cuadrada();
+                    matrizC = op.suma(tam, matrizA, matrizB, matrizD);
+                    Lectura.escritura(tam, tam, matrizC);
+                    break;
+                }
+                case 2: {
+                    System.out.println("Ingrese el numero de filas de la primera Matriz");
+                    fila1 = Lectura.cap();
+                    System.out.println("Ingrese el numero de columnas de la primera Matriz");
+                    col1 = Lectura.cap();
+                    System.out.println("Ingrese el numero de filas de la segunda Matriz");
+                    fila2 = Lectura.cap();
+                    System.out.println("Ingrese el numero de columnas de la segunda Matriz");
+                    col2 = Lectura.cap();
+                    int matrizA[][] = new int[fila1][col1];
+                    int matrizB[][] = new int[fila2][col2];
+                    int matrizC[][] = new int[fila1][col2];
+                    if (col1 == fila2) {
+                        System.out.println("Ingrese los numeros para la matriz A:");
+                        matrizA = Lectura.matriz_dim(fila1, col1);
+                        System.out.println("Ingrese los numeros para la matriz B:");
+                        matrizB = Lectura.matriz_dim(fila2, col2);
+                        matrizC = op.producto(fila1, col1, fila2, col2, matrizA, matrizB);
+                        Lectura.escritura(fila1, col2, matrizC);
+                    } else {
+                        System.out.println("Las dimensiones ingresadas no cumplen los criterios del producto punto");
                     }
-                    
-                }while(opc1!=5);
+                    break;
+                }
+                case 3: {
+                    mens = "Elija un tamaño de matriz \n1.2X2 \n2.3X3 \n3.4X4 ";
+                    Lectura.imprimir(mens);
+                    opcion2 = Lectura.cap();
+                    switch (opcion2) {
+                        case 1: {
+                            tam = 2;
+                            int matrizA[][] = new int[tam][tam];
+                            int matrizB[][] = new int[tam][tam];
+                            mens = "Ingrese un numero por el que multiplicar la matriz";
+                            Lectura.imprimir(mens);
+                            num = Lectura.cap();
+                            matrizB = Operacion.escalar(tam, num, matrizA);
+                            Lectura.escritura(tam, tam, matrizB);
+                            break;
+                        }
+                        case 2: {
+                            tam = 3;
+                            int matrizA[][] = new int[tam][tam];
+                            int matrizB[][] = new int[tam][tam];
+                            Lectura.matriz_dim(tam, tam);
+                            System.out.println("Ingrese un numero por el que multiplicar la matriz");
+                            num = in.nextInt();
+                            matrizB = Operacion.escalar(tam, num, matrizA);
+                            for (int i = 0; i < tam; i++) {
+                                for (int j = 0; j < tam; j++) {
+                                    System.out.print(matrizB[i][j] + "\t");
+                                }
+                                System.out.print("\n");
+                            }
+                            break;
+                        }
+                        case 3: {
+                            tam = 4;
+                            int matrizA[][] = new int[tam][tam];
+                            int matrizB[][] = new int[tam][tam];
+                            for (int i = 0; i < tam; i++) {
+                                for (int j = 0; j < tam; j++) {
+                                    System.out.println("Ingrese un valor para la matriz");
+                                    matrizA[i][j] = in.nextInt();
+                                }
+                            }
+                            System.out.println("Ingrese un numero por el que multiplicar la matriz");
+                            num = in.nextInt();
+                            matrizB = Operacion.escalar(tam, num, matrizA);
+                            for (int i = 0; i < tam; i++) {
+                                for (int j = 0; j < tam; j++) {
+                                    System.out.print(matrizB[i][j] + "\t");
+                                }
+                                System.out.print("\n");
+                            }
+                            break;
+                        }
+                    }
+                }
+                case 4: {
+                    System.out.println("Ingrese el numero de filas");
+                    fila1 = in.nextInt();
+                    System.out.println("Ingrese el numero de columnas ");
+                    col1 = in.nextInt();
+                    int matrizA[][] = new int[fila1][col1];
+                    int matrizB[][] = new int[col1][fila1];
+                    for (int i = 0; i < fila1; i++) {
+                        for (int j = 0; j < col1; j++) {
+                            System.out.println("Ingrese un numero para la matriz ");
+                            matrizA[i][j] = in.nextInt();
+                        }
+                    }
+                    matrizB = Operacion.traspuesta(fila1, col1, matrizA);
+                    for (int i = 0; i < col1; i++) {
+                        for (int j = 0; j < fila1; j++) {
+                            System.out.print(matrizB[i][j] + "\t");
+                        }
+                        System.out.print("\n");
+                    }
+                    break;
+                }
             }
-        }while(opc!=3);
+        } while (opcion != 5);
     }
 }
