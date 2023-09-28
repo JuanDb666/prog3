@@ -15,10 +15,10 @@ public class Lab0301 {
 public static void main(String[] args) {
     //registro estudiante();
     lec_archivo();
-    Salida.exit(at "Ingrese Las Materias A Inscribir");
-    registro asignaturas();
+    Salida.exit( "Ingrese Las Materias A Inscribir");
+    registro_asignaturas();
     //reporte_registo_final ();
-    Salida.exit Asignatura (: materias);
+    Salida.exit_Asignatura ( materia);
 }
 public static void registro_estudiante() {
   String codigo = Entrada. readText ("Ingreese el Cogigo Del Estudiante");
@@ -32,17 +32,31 @@ public static void registro_asignaturas(){
     int credit = 0, creditemporal=0;
     String pregunta;
     while (credit < 5) {
-    int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");Entrada.correcion();
+    //creditemporal=credit;
+    int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");
+    Entrada.correcion();
     String nom_asignatura = Entrada. readText ( "Ingrese Nombre Asignaruta");
     int semestre = Entrada.readInt ( "Ingrese el Semestre al que pertenece");
-    int n_credi = Entrada.readInt ("Ingrese el numero de creditos");Entrada.correcion();
+    int n_credi = Entrada.readInt ("Ingrese el numero de creditos");
+    Entrada.correcion();
+    credit += n_credi;
     String hora = Entrada. readText ("Ingrese el horario ");
     materia.add(new Asignatura (codigo, nom_asignatura, semestre, n_credi, hora));
     credit += n_credi;
+    for (Asignatura temp: materia){
+                    if(!hora.equalsIgnoreCase(temp.getHorario())){
+                        materia.add(new Asignatura(codigo, nom_asignatura, semestre, n_credi, hora));
+                        break;
+                    }if (hora.equalsIgnoreCase(temp.getHorario())){
+                        System.out.println("Horario ya inscrito previamente");
+                        credit=creditemporal;
+                    }
+                }
+    }
     if (credit >= 5) {
        pregunta = Entrada.readText ("usted ya incribio el minimo de 5 creditos, ¿Continuar?");
         if (pregunta.equalsIgnoreCase ("si")) {
-            while (credit < 16) {
+            while (credit <= 16) {
                 creditemporal=credit;
                 int codigo = Entrada.readInt ("Ingrese el Codigo de la asignatura ");Entrada.correcion();
                 String nom_asignatura = Entrada. readText ("Ingrese Nombre Asignaruta"); 
@@ -67,7 +81,6 @@ public static void registro_asignaturas(){
     
     }
     
-    }
    
 }
  public static void reporte_registro_final(){
@@ -78,7 +91,24 @@ public static void registro_asignaturas(){
      BufferedReader lector;
      String mensaje = "", lec;
      try {
-          archi = new FileReader();
-     }         
+          archi = new FileReader("C:\\Users\\Juand\\OneDrive\\Documentos\\NetBeansProjects\\Lab0301\\data\\asignaturas.txt");
+          if(archi.ready()){
+              lector = new BufferedReader(archi);
+              while ((lec = lector.readLine()) != null){
+              mensaje = mensaje + lec + "\n";
+          }
+        } else {
+              System.out.println("El archivo no esta listo para ser mostrado");
+          }
+     } catch (Exception e){
+         System.out.println(e.getMessage());
+     }
+     System.out.println(mensaje);
  }
+ public static void exit_Asignatura(){
+     for (Asignatura asignatura : materia){
+         System.out.println("Asignatura: "+ asignatura.getCodigo());
+     }
+ }
+ 
 }
