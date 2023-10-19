@@ -8,6 +8,7 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;        
         
@@ -40,20 +41,20 @@ public class Lab0501 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        Panel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         Box1 = new javax.swing.JComboBox<>();
         acept_btn = new javax.swing.JButton();
         barras_bnt = new javax.swing.JButton();
         torta_btn = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        panel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel1.setText("Estadistica de medicamentos");
 
-        Box1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Box1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elige una opcion", "Medicamentos por concentración" }));
         Box1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Box1ActionPerformed(evt);
@@ -76,44 +77,32 @@ public class Lab0501 extends javax.swing.JFrame {
 
         torta_btn.setText("Grafica de torta");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 264, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout Panel1Layout = new javax.swing.GroupLayout(Panel1);
+        Panel1.setLayout(Panel1Layout);
+        Panel1Layout.setHorizontalGroup(
+            Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel1Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addComponent(barras_bnt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(torta_btn)
                 .addGap(92, 92, 92))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(Panel1Layout.createSequentialGroup()
+                .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel1Layout.createSequentialGroup()
                         .addGap(211, 211, 211)
                         .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(288, 288, 288)
-                        .addComponent(Box1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(Panel1Layout.createSequentialGroup()
                         .addGap(316, 316, 316)
-                        .addComponent(acept_btn)))
+                        .addComponent(acept_btn))
+                    .addGroup(Panel1Layout.createSequentialGroup()
+                        .addGap(255, 255, 255)
+                        .addComponent(Box1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(237, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        Panel1Layout.setVerticalGroup(
+            Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel1Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
@@ -121,25 +110,37 @@ public class Lab0501 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(acept_btn)
                 .addGap(113, 113, 113)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(barras_bnt)
                     .addComponent(torta_btn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(138, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
+        panel2.setLayout(panel2Layout);
+        panel2Layout.setHorizontalGroup(
+            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        panel2Layout.setVerticalGroup(
+            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 132, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(Panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -158,16 +159,28 @@ public class Lab0501 extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "OPCION INVALIDA");
         }
         if (item1.equalsIgnoreCase("Medicamentos por Concentración")){
-            DefaultCategoryDataset d = new DefaultCategoryDataset();
+            DefaultCategoryDataset dat = new DefaultCategoryDataset();
             
-            d.setValue(0.5, "Acetaminofen", "Tableta");
-            d.setValue(0.25, "Acetaminofen", "Supocitorio");
-            d.setValue(0.325, "Acetaminofen", "Tableta");
-            d.setValue(0.125, "Acetaminofen", "Granulado-Sachet");
+            dat.setValue(0.5, "Acetaminofen", "Tableta");
+            dat.setValue(0.25, "Acetaminofen", "Supocitorio");
+            dat.setValue(0.325, "Acetaminofen", "Tableta");
+            dat.setValue(0.125, "Acetaminofen", "Granulado-Sachet");
+            dat.setValue(0.005, "Acido Borico", "Polvo");
+            dat.setValue(0.23, "ACEITE ESENCIAL DE EUCALIPTO + MENTOL  + ALCANFOR + SALICILATO DE METILO", "Ungüento");
+            dat.setValue(0.188, "ACEITE ESENCIAL DE EUCALIPTO + MENTOL  + ALCANFOR + TRIMENTINA", "Ungüento");
+            dat.setValue(0.47, "ACEITE DE HÍGADO DE PESCADO + OXIDO DE ZINC", "Crema Tópica");
+            
+            
+             JFreeChart barras = ChartFactory.createBarChart(item1,"Formula Farmaceutica", "Concentración", dat , PlotOrientation.VERTICAL,true, true, false);
+            ChartPanel panel1 = new ChartPanel(barras);
+            panel1.setMouseWheelEnabled(true);
+            panel2.setLayout(new BorderLayout());
+            panel2.add(panel1, BorderLayout.NORTH);
+            pack();
+            repaint();
         }
         
-        JFreeChart barras = ChartFactory.createBarChart(item1,"Formula Farmaceutica", "Concentración"), d, PlotOrientation.vertical,true, true, false;
-        ChartPanel
+       
     }//GEN-LAST:event_barras_bntActionPerformed
 
     /**
@@ -207,11 +220,11 @@ public class Lab0501 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Box1;
+    private javax.swing.JPanel Panel1;
     private javax.swing.JButton acept_btn;
     private javax.swing.JButton barras_bnt;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel panel2;
     private javax.swing.JButton torta_btn;
     // End of variables declaration//GEN-END:variables
 }
