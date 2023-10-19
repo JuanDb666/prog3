@@ -1,0 +1,6 @@
+Url para la realizacion del laboratorio 5
+
+https://www.datos.gov.co/Salud-y-Protecci-n-Social/LISTADO-DE-MEDICAMENTOS-EN-VENTA-LIBRE/xzwx-qpja
+
+Se busca de manera facil y clara la vizualizacion de los datos de productos de uso medico en su venta libre, 
+datos clasificados en Principio activo, concentracion y formula farmaceutica.
