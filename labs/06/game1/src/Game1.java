@@ -42,7 +42,7 @@ public Game1 (JLabel eti, Race p){
                 }else if(c4>c1 && c4>c2 && c4>c3 && c4>c5){
                     JOptionPane.showMessageDialog(null, "Gano el cuarto auto");
                 }else if(c5>c1 && c5>c2 && c5>c3 && c5>c4){
-                    JOptionPane.showMessageDialog(null, "Gano el quinto auto");
+                    JOptionPane.showMessageDialog(null, "Gano el quinto auto");/*
                 }else if(p.getlbl1().getLocation().x==p.getlbl2().getLocation().x && c1>c3 && c1>c4 && c1>c5){
                     JOptionPane.showMessageDialog(null, "Empate entre auto 1 y auto 2");
                 }else if(c1>c2 && p.getlbl1().getLocation().x==p.getlbl3().getLocation().x && c1>c4 && c1>c5){
@@ -62,11 +62,11 @@ public Game1 (JLabel eti, Race p){
                 }else if(c3>c1 && c3>c2 && c3>c4 && p.getlbl3().getLocation().x==p.getlbl5().getLocation().x){
                     JOptionPane.showMessageDialog(null, "Empate entre auto 3 y auto 5");
                 }else if(c4>c1 && c4>c2 && c4>c3 && p.getlbl4().getLocation().x==p.getlbl5().getLocation().x){
-                    JOptionPane.showMessageDialog(null, "Empate entre auto 4 y auto 5");
-                }        
+                    JOptionPane.showMessageDialog(null, "Empate entre auto 4 y auto 5");*/
+                }     
                 else{
                      JOptionPane.showMessageDialog(null, "Empate");
-                }  
+                } 
             }
         }
     }

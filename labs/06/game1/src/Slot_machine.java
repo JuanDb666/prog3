@@ -31,7 +31,6 @@ public class Slot_machine extends javax.swing.JFrame {
         pic4 = new javax.swing.JLabel();
         Menu = new javax.swing.JButton();
         Activador = new javax.swing.JButton();
-        Salida = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,27 +38,23 @@ public class Slot_machine extends javax.swing.JFrame {
 
         pic2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traga/figura12.png"))); // NOI18N
 
-        pic3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traga/figura7.png"))); // NOI18N
+        pic3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traga/figura5.png"))); // NOI18N
 
         pic4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/traga/figura13.png"))); // NOI18N
 
-        Menu.setText("Menu");
+        Menu.setFont(new java.awt.Font("Verdana Pro Cond Semibold", 3, 18)); // NOI18N
+        Menu.setText("Return Menu");
         Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuActionPerformed(evt);
             }
         });
 
-        Activador.setText("TIRAR");
+        Activador.setFont(new java.awt.Font("Verdana Pro Cond Semibold", 3, 36)); // NOI18N
+        Activador.setText("START");
         Activador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ActivadorActionPerformed(evt);
-            }
-        });
-
-        Salida.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalidaActionPerformed(evt);
             }
         });
 
@@ -68,59 +63,53 @@ public class Slot_machine extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(pic1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(pic2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pic3)
-                        .addGap(18, 18, 18)
-                        .addComponent(pic4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(257, 257, 257)
-                        .addComponent(Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pic3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pic4, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(58, 58, 58)
-                        .addComponent(Menu))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(331, 331, 331)
-                        .addComponent(Activador)))
-                .addContainerGap(105, Short.MAX_VALUE))
+                        .addComponent(Activador, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pic4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pic2, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                    .addComponent(pic1, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                    .addComponent(pic3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pic1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pic2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(pic3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(pic4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
-                .addComponent(Salida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(Activador)
-                .addGap(45, 45, 45)
-                .addComponent(Menu)
-                .addGap(69, 69, 69))
+                    .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Activador, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
-        // TODO add your handling code here:
+        menu abrir = new menu();
+        abrir.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_MenuActionPerformed
 
     private void ActivadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActivadorActionPerformed
-         if (Activador.getText().equals("TIRAR")){
-            Activador.setText("PARAR");
+         if (Activador.getText().equals("START")){
+            Activador.setText("STOP");
             a.startAnimation(); d.startAnimation(); b.startAnimation(); c.startAnimation();
-            Salida.setText("");
+            
                
             
         }
@@ -129,20 +118,16 @@ public class Slot_machine extends javax.swing.JFrame {
             a.stopAnimation(); b.stopAnimation(); c.stopAnimation(); d.stopAnimation();
             
             if (a.getIm() == b.getIm() && b.getIm() == c.getIm() && c.getIm() == d.getIm()){
-                JOptionPane.showMessageDialog(null, "Ganador");
+                JOptionPane.showMessageDialog(null, "WINNER");
             }else{
-                JOptionPane.showMessageDialog(null, "Perdedor");
+                JOptionPane.showMessageDialog(null, "LOSER");
             }
            
             
             
-            Activador.setText("TIRAR");
+            Activador.setText("START");
         }
     }//GEN-LAST:event_ActivadorActionPerformed
-
-    private void SalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalidaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SalidaActionPerformed
     animacion a ; 
     animacion b ;
     animacion c ; 
@@ -183,7 +168,6 @@ public class Slot_machine extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Activador;
     private javax.swing.JButton Menu;
-    private javax.swing.JTextField Salida;
     private javax.swing.JLabel pic1;
     private javax.swing.JLabel pic2;
     private javax.swing.JLabel pic3;
